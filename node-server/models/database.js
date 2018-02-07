@@ -10,7 +10,7 @@
 // We then pass that instance of Knex to Bookshelf which allows
 // us to create models and maintain a connection to the database
 console.log("env", process.env.NODE_ENV);
-var knex      = require('knex')(require(__dirname + '/../knexfile')[process.env.NODE_ENV]);
+var knex      = require('knex')(require(__dirname + '/../knexfile')[process.env.NODE_ENV||"development"]);
     // bookshelf = require('bookshelf')(knex);
 
 // Now we enable the "registry" plugin. This will help us later
