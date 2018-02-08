@@ -16,7 +16,12 @@ module.exports = [
     {
         text: 'very corporate environment',
         user: 'Deborah@email.com'
-    }
+    },
+
+    {
+        text: 'wow',
+        user: 'herbert@email.com'
+    },
 
 ]
 

@@ -23,4 +23,10 @@ module.exports = [
         password: 'whatIsGoingOn',
         current_position: "Salesforce junior dev"
     },
+    {
+        email: 'herbert@email.com',
+        name: 'Herbert Mars',
+        password: 'ldfsiha',
+        current_position: "Java junior dev"
+    }
 ]
