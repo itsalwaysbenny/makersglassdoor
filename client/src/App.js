@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from 'react-dom'
+import Company from './Company'
+
+import ApiService from './apiService'
+
+// const service = new ApiService
+// console.log(service)
+// var something = service.getCompany()
+// console.log(something)
 
 class App extends Component {
+  constructor() {
+    super()
+    this.service = new ApiService // Mockup data fetch
+    console.log(this.service)
+    this.data = this.service.getCompany()
+    console.log(this.data)
+    this.state = {}
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+    return(
+      <Company company={this.state} />
     );
   }
 }
 
-export default App;
+
+
+export default App
