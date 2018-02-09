@@ -22,5 +22,9 @@ describe('Company', () => {
 
   it('renders Company size', () => {
     expect(dataWrapper.find('h4').text()).toEqual(company.size)
-  })
+  });
+
+  it('renders the Company logo', () => {
+    expect(dataWrapper.find('img').exists()).toEqual(true);
+  });
 });

@@ -6,6 +6,7 @@ function Company (props) {
       <div>
         <h3>{props.name}</h3>
         <h4>{props.size}</h4>
+        <img />
       </div>
     </div>
   );
