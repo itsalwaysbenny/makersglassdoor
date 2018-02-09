@@ -6,26 +6,26 @@ module.exports = [
     },
     {
         text: 'Totally awesome',
-        user: 'mary@email.com',
+        author_id: 'mary@email.com',
         company_id: 'WhatEverHappens ltd'
 
     },
 
     {
         text: 'You have to work real hard but totally worth every second',
-        user: 'Francis@email.com',
+        author_id: 'Francis@email.com',
         company_id: 'WhatEverHappens ltd'
     },
 
     {
         text: 'very corporate environment',
-        user: 'Deborah@email.com',
+        author_id: 'Deborah@email.com',
         company_id: 'This is it'
     },
 
     {
         text: 'wow',
-        user: 'herbert@email.com',
+        author_id: 'herbert@email.com',
         company_id: 'This is it'
     }
 
