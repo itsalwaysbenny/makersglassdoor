@@ -1,33 +1,59 @@
+const usersData = require('../../../data/users');
+const reviewsData = require('../../../data/reviews');
+const companiesData = require('../../../data/companies');
+
 
 exports.seed = function(knex, Promise) {
-  return knex('users').del() // Deletes ALL existing entries
-    .then(function() { // Inserts seed entries one by one in series
-      return knex('users').insert({
-        email: 'T1@t1.com',
-        name: 'T1',
-        password: 'test',
-        current_position: 'testerone'
-      });
-    }).then(function () {
-      return knex('users').insert({
-        email: 'T2@t2.com',
-        name: 'T2',
-        password: 'test2',
-        current_position: 'testertwo'
-      });
-    }).then(function () {
-      return knex('users').insert({
-        email: 'T3@t3.com',
-        name: 'T3',
-        password: 'test3',
-        current_position: 'testerT3'
-      });
-    }).then(function () {
-      return knex('users').insert({
-        email: 'T4@t4.com',
-        name: 'T4',
-        password: 'test4',
-        current_position: 'testerT4'
-      });
-    });
+    return knex('reviews').del()
+        .then(() => {
+        return knex('users').del();
+})
+.
+    then(() => {
+        return knex('companies').del();
+})
+.then(()=>{
+        return knex('companies').insert(companiesData);
+})
+.
+    then(() => {
+        return knex('users').insert(usersData);
+
+})
+.
+    then(() => {
+        let reviewsPromises = [];
+    reviewsData.forEach((review) => {
+        let userEmail = review.author_id;
+    let companyName = review.company_id;
+
+    reviewsPromises.push(createReview(knex, review, userEmail, companyName));
+});
+    return Promise.all(reviewsPromises);
+
+});
+};
+
+
+const createReview = (knex, review, userEmail, companyName) => {
+
+    var dataCid =[];
+    return knex('companies').where('name', companyName).first()
+        .then((data)=>{
+          console.log("what is that", data);
+        dataCid.push(data.cid);
+    return Promise.all(dataCid);
+})
+.then(()=>{
+        return knex('users').where('email', userEmail).first()
+            .then((userRecord)=>{
+            return knex('reviews').insert({
+                text: review.text,
+                author_id: userRecord.id,
+                company_id: dataCid[0]
+            });
+})
+})
+.catch((err)=> console.log(err));
+
 };
