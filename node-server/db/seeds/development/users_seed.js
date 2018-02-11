@@ -18,19 +18,16 @@ exports.seed = function(knex, Promise) {
 .
     then(() => {
         return knex('users').insert(usersData);
-
 })
 .
     then(() => {
         let reviewsPromises = [];
     reviewsData.forEach((review) => {
         let userEmail = review.author_id;
-    let companyName = review.company_id;
-
+        let companyName = review.company_id;
     reviewsPromises.push(createReview(knex, review, userEmail, companyName));
 });
     return Promise.all(reviewsPromises);
-
 });
 };
 
@@ -40,7 +37,6 @@ const createReview = (knex, review, userEmail, companyName) => {
     var dataCid =[];
     return knex('companies').where('name', companyName).first()
         .then((data)=>{
-          console.log("what is that", data);
         dataCid.push(data.cid);
     return Promise.all(dataCid);
 })
@@ -55,5 +51,4 @@ const createReview = (knex, review, userEmail, companyName) => {
 })
 })
 .catch((err)=> console.log(err));
-
 };
