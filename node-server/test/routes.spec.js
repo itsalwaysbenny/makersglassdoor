@@ -30,3 +30,19 @@ describe('GET /users/login', () => {
             });
     })
 });
+
+describe('POST/users/login', () => {
+    it('should login the user', done => {
+        chai.request(server)
+          .post('/users/login')
+          .send({
+            email: 'T1@t1.com'
+            // password: 'test'
+          })
+          .end( (err, res) => {
+              res.should.have.status(200);
+              res.should.be.json
+              done();
+          });
+    })
+});
