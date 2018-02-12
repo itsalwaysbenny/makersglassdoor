@@ -1,0 +1,10 @@
+.Company{
+  text-align: left;
+}
+
+.Img{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
