@@ -26,6 +26,6 @@ describe('Reviews', () => {
   });
 
   it('renders Review date', () => {
-    expect(dataWrapper.find('h4').at(1).props(2).children).toEqual(["on ", "Date"]);
+    expect(dataWrapper.find('h4').at(1).props().children).toEqual(["on ", "Date"]);
   });
 });
