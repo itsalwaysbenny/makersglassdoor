@@ -1,21 +1,32 @@
 process.env.NODE_ENV = 'test';
 
-var chai = require('chai');
-var chaiHttp = require('chai-http');
-var server = require('../app');
-var knex = require('../db/knex');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const server = require('../app');
+const knex = require('../db/knex');
 
-var should = chai.should();
+const should = chai.should();
 
-chai.use(chaiHttp);
+chai.use(chaiHttp); // For testing HTTP
 
-describe('GET /users', function(){
-    it('should return status 200 when going to /users URL', function(done){
+describe('GET /users', () => {
+    it('should return status 200 when going to /users URL', done => {
         chai.request(server)
             .get('/users')
-            .end(function(err, res){
+            .end((err, res) => {
                 res.should.have.status(200);
                 done();
             });
     });
+});
+
+describe('GET /users/login', () => {
+    it('should return status 200', done => {
+        chai.request(server)
+            .get('/users/login')
+            .end( (err, res) => {
+                res.should.have.status(200);
+                done();
+            });
+    })
 });
