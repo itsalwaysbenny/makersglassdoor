@@ -1,5 +1,8 @@
 import React from 'react';
 import style from './Company.css'
+
+
+
 function Company (props) {
   return(
   <div>
