@@ -22,7 +22,7 @@ describe('Reviews', () => {
   });
 
   it('renders Review author', () => {
-    expect(dataWrapper.find('h4').first().text()).toEqual('Author');
+    expect(dataWrapper.find('h4').first().text()).toEqual('Written By: Author');
   });
 
   it('renders Review date', () => {
