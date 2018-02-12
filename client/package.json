@@ -98,4 +98,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "react-test-renderer": "^16.2.0"
   }
+
+  "proxy": "http://localhost:3001"
+
 }
