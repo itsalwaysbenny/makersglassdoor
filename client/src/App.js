@@ -12,7 +12,7 @@ class App extends Component {
         <Company img="http://assets.makersacademy.com/images/logo/ma-wordmark-red.png" name='Makers Academy' size='200' />
       </div>
       <div>
-        <Reviews />
+        <Reviews text= "This is a review" author = "Author" date = 'Date' />
       </div>
     </div>
 

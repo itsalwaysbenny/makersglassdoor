@@ -1,9 +1,11 @@
 import React from 'react'
 
-function Reviews () {
+function Reviews (props) {
   return (
     <div>
-      <h1> "I AM A REVIEW COMPONENT"</h1>
+      <h3>{props.text}</h3>
+      <h4>{props.author}</h4>
+      <h5>{props.date}</h5>
     </div>
   )
 }
