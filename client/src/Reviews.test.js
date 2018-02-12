@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 describe('Reviews', () => {
   // Mock Data
-  const review = { text: 'This is a review', author: 'Author', date: 'Date' }
+  const review = { text: 'This is a review', author: 'Author', date:'Date' }
 
   // Empty Wrapper
   let wrapper = shallow(<Reviews />);
@@ -26,6 +26,6 @@ describe('Reviews', () => {
   });
 
   it('renders Review date', () => {
-    expect(dataWrapper.find('h4').at(1).props().children).toEqual('Date');
+    expect(dataWrapper.find('h4').at(1).props(2).children).toEqual(["on ", "Date"]);
   });
 });
