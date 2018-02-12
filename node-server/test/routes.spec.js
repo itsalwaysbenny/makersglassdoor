@@ -40,11 +40,11 @@ describe('POST/users/login', () => {
             password: 'password'
           })
           .end((err, res) => {
-            //   console.log(res);
-            //   res.should.have.status(200);
+              // console.log(res);
+              res.should.have.status(302);
             //   res.should.be.json
             res.body.should.be.a('object');
-            // res.body.should.have.property('email');
+            res.body.should.have.property('email');
             // res.body.should.have.property('password');
               done();
           });
