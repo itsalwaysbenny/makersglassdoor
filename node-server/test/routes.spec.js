@@ -36,13 +36,18 @@ describe('POST/users/login', () => {
         chai.request(server)
           .post('/users/login')
           .send({
-            email: 'T1@t1.com'
-            // password: 'test'
+            email: 'email',
+            password: 'password'
           })
-          .end( (err, res) => {
-              res.should.have.status(200);
-              res.should.be.json
+          .end((err, res) => {
+            //   console.log(res);
+            //   res.should.have.status(200);
+            //   res.should.be.json
+            res.body.should.be.a('object');
+            // res.body.should.have.property('email');
+            // res.body.should.have.property('password');
               done();
           });
-    })
+    });
+    it('should not login the user with invalid credentials');
 });

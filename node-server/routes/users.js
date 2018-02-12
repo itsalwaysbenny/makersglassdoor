@@ -24,16 +24,19 @@ router.post('/login', (req, res, next) =>{
   //   .catch(function(error){
   //     next(error);
   //   });
-  // //Fake user and password for authentication at the moment as queries as above not setup
-  let fakeUser = {
-    user: 'user'
-  };
-  let fakePassword = {
-    password: 'password'
-  };
 
-  if (req.body.password === user.password) {
-    req.session.user = user; //Saving for persisting the session
+
+  // //Fake user and password for authentication at the moment as queries as above is not setup yet
+  let fakeUser = {
+    email: 'email',
+    password: 'password'    
+  }
+
+  // Query to database for the email inputed and fetch the "encrypted" password
+  // Compare the "encrypted" password in the database with the password from the input form - use bcrypt
+
+  if (req.body.password === fakeUser.password) { // Should be the Password in the database
+    req.session.cookie = true; //Saving for persisting the session
     res.redirect('/');
   } else {
     console.log('Invalid user credentials');
