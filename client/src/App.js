@@ -7,7 +7,7 @@ class App extends Component {
 
     return (
       <div>
-        <Company img="http://assets.makersacademy.com/images/logo/ma-wordmark-red.png" name='Makers Academy' size='200' />
+        // <Company img="http://assets.makersacademy.com/images/logo/ma-wordmark-red.png" name='Makers Academy' size='200' />
       </div>
     );
   }
