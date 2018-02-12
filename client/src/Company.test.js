@@ -17,11 +17,11 @@ describe('Company', () => {
   let dataWrapper = shallow(<Company {...company}/>);
 
   it('renders Company name', () => {
-    expect(dataWrapper.find('h3').text()).toEqual(company.name);
+    expect(dataWrapper.find('h3').text()).toEqual("Company Name: Makers Academy");
   });
 
   it('renders Company size', () => {
-    expect(dataWrapper.find('h4').text()).toEqual(company.size)
+    expect(dataWrapper.find('h4').text()).toEqual("Company Size: 200")
   });
 
   it('renders the Company logo', () => {
