@@ -5,12 +5,26 @@ import style from './App.css'
 
 
 class App extends Component {
+
+    state = {companies: []}
+
+    componentDidMount() {
+        fetch('/companies')
+            .then(res => res.json())
+            .then(companies => this.setState({ companies }));
+    }
+
   render() {
 
     return (
     <div>
       <div>
-        <Company img="http://assets.makersacademy.com/images/logo/ma-wordmark-red.png" name='Makers Academy' size='200' description='Makers Academy is a fully immersive, full-time computer programming bootcamp, designed to turn people with no knowledge of web development into job-ready junior devepers in just 12 weeks' stack="Ruby, Javascript, Rails, TDD, HTML, git" />
+
+
+          {this.state.companies.map(company =>
+              <Company img="http://assets.makersacademy.com/images/logo/ma-wordmark-red.png"  name={company.name} size='40' />
+          )}
+
       </div>
       <div className={style.App}>
       <h2> Reviews </h2>
