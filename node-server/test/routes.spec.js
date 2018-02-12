@@ -19,3 +19,15 @@ describe('GET /users', function(){
             });
     });
 });
+
+describe('GET /companies', function(){
+    it(' return 200', function(done){
+        chai.request(server)
+            .get('/companies')
+            .end(function(err,res){
+                res.should.have.status(200);
+                res.body[0].should.have.property('name');
+                done();
+        });
+    });
+});
