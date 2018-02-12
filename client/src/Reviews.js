@@ -5,7 +5,7 @@ function Reviews (props) {
     <div>
       <h3>{props.text}</h3>
       <h4>{props.author}</h4>
-      <h5>{props.date}</h5>
+      <h4>{props.date}</h4>
     </div>
   )
 }

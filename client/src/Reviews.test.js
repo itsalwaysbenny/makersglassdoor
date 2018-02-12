@@ -18,15 +18,14 @@ describe('Reviews', () => {
   let dataWrapper = shallow(<Reviews {...review}/>);
 
   it('renders Review text', () => {
-    expect(dataWrapper.find('h3').text()).toEqual('This is a review');
+    expect(dataWrapper.find('h3').at(0).props().children).toEqual('This is a review');
   });
 
   it('renders Review author', () => {
-    expect(dataWrapper.find('h4').text()).toEqual('Author');
+    expect(dataWrapper.find('h4').first().text()).toEqual('Author');
   });
 
   it('renders Review date', () => {
-    expect(dataWrapper.find('h5').text()).toEqual('Date');
+    expect(dataWrapper.find('h4').at(1).props().children).toEqual('Date');
   });
-
-})
+});
