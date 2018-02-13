@@ -1,10 +1,5 @@
-import React, { Component } from 'react';
-import Company from './Company';
-import Reviews from './Reviews';
+import React, { Component } from 'react';;
 import Layout from './Layout';
-import style from './App.css'
-import background from './Layout.css'
-
 
 class App extends Component {
   render() {
@@ -13,7 +8,6 @@ class App extends Component {
     <div>
     <Layout> </Layout>
     </div>
-
     );
   }
 }
