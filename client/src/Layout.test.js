@@ -1,10 +1,10 @@
 import React from 'react';
-import Homepage from './Homepage';
+import Layout from './Layout';
 import { shallow } from 'enzyme';
 
-describe('Homepage', () => {
+describe('Layout', () => {
 
-  let wrapper = shallow(<Homepage />);
+  let wrapper = shallow(<Layout />);
 
   it ('renders without crashing', () => {
     expect(wrapper.type()).toEqual('div');
