@@ -5,6 +5,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('client-sessions');
+const passport = require('passport')
 
 
 const index = require('./routes/index');
@@ -23,6 +24,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+// to use static files such as images css, static assets
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -38,7 +40,8 @@ app.use(
         duration: 24 *60 * 60 *1000
     })
 );
-
+//Passport is Express-compatible authentication middleware for Node.js.
+app.use(passport.initialize());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
