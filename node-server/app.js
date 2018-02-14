@@ -5,8 +5,6 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('client-sessions');
-const passport = require('passport')
-
 
 const index = require('./routes/index');
 const users = require('./routes/users');
