@@ -1,0 +1,41 @@
+.Company{
+  text-align: left;
+  padding-bottom: 70px;
+}
+
+.companyName {
+  border: 1px solid black;
+  width: 20%;
+}
+
+.companySize {
+  border: 1px solid black;
+  width: 20%;
+  text-align: center;
+}
+
+.companyInfo {
+  border: 1px solid black;
+}
+
+.companySizeHeader {
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.companySizeNumber {
+  font-weight: 700;
+  font-size: 24px
+}
+
+.Img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.Stack{
+  text-align: center;
+}

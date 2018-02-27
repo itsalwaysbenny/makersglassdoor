@@ -4,16 +4,17 @@ import style from './Company.css'
 
 function Company (props) {
   return(
-  <div>
+  <div className={style.Company}>
+
     <div className={style.Img}>
       <img src= {props.img}/>
     </div>
 
-    <div className={style.Company}>
-      <h3>Company Name: {props.name}</h3>
-      <h4>Company Size: {props.size}</h4>
+    <div className={style.companyInfo}>
+        <h3 className={style.companyName}>{props.name}</h3>
+        <h4 className={style.companySize}><span className={style.companySizeHeader}>Tech Team Size</span> <br /> <span className={style.companySizeNumber}>{props.size}</span></h4>
     </div>
-
+      
     <div>
       <p>Description: {props.description}</p>
     </div>
